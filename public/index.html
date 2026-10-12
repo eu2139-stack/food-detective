@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#101a2b">
+<title>食物犯罪現場｜Food Detective</title>
+<style>
+:root{--bg:#0c1422;--panel:#152238;--panel2:#1c2d46;--line:#334762;--gold:#f5c45e;--cream:#f7f0df;--muted:#a9b8cc;--red:#ef6b66;--green:#69d2a4}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1a2a43 0,#0c1422 55%);color:var(--cream);font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif;min-height:100vh}button,input,select{font:inherit}button{border:0;border-radius:12px;padding:12px 15px;background:var(--gold);color:#1b2431;font-weight:800;cursor:pointer}button:disabled{opacity:.4;cursor:not-allowed}.secondary{background:#263a55;color:var(--cream);border:1px solid var(--line)}.danger{background:#713a43;color:white}.wrap{max-width:980px;margin:auto;padding:16px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:12px 0 18px}.brand{font-weight:950;letter-spacing:1px}.brand small{display:block;color:var(--gold);font-weight:600;letter-spacing:3px;font-size:11px}.stamp{border:1px solid var(--gold);color:var(--gold);padding:5px 8px;border-radius:6px;font-size:11px;transform:rotate(-3deg)}h1{font-size:clamp(25px,5vw,42px);line-height:1.15;margin:22px 0 8px}h2{font-size:20px;margin:0 0 12px}h3{font-size:16px;margin:0 0 8px}.muted{color:var(--muted)}.gold{color:var(--gold)}.panel{background:linear-gradient(145deg,rgba(28,45,70,.96),rgba(18,31,49,.96));border:1px solid var(--line);border-radius:18px;padding:16px;margin:14px 0;box-shadow:0 12px 30px #0002}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:7px;margin:10px 0}.field input,.field select{background:#0e1929;border:1px solid var(--line);border-radius:10px;padding:12px;color:var(--cream);width:100%}.row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.row.between{justify-content:space-between}.pill{display:inline-block;padding:5px 9px;border-radius:99px;background:#263a55;color:#d9e4f4;font-size:12px}.pill.goldpill{background:#4b4026;color:var(--gold)}.hidden{display:none!important}.case-title{font-size:21px;font-weight:900}.case-num{color:var(--gold);font-size:12px;letter-spacing:2px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:9px}.card{background:#f7f0df;color:#172234;border:3px solid #d8c9a8;border-radius:13px;padding:12px;text-align:left;min-height:145px;display:flex;flex-direction:column;gap:7px;box-shadow:0 4px 0 #b4a17b;position:relative}.card .type{font-size:10px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#53647b}.card strong{font-size:14px;line-height:1.35}.card small{font-size:12px;line-height:1.45}.card.selected{outline:3px solid var(--gold);border-color:#f1bb4b;transform:translateY(-2px)}.card:disabled{opacity:.48}.card.food{border-color:#d4a56b}.card.clue{border-color:#7eb8b3}.card.case{background:#202d40;color:#f7f0df;border-color:var(--gold)}.card.case .type{color:var(--gold)}.card .mark{position:absolute;right:8px;top:8px;font-size:10px;background:#20364e;color:white;padding:3px 5px;border-radius:5px}.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:18px 0 10px}.notice{padding:12px;border-radius:12px;background:#0d1929;border:1px solid var(--line);color:var(--muted);line-height:1.6}.notice.good{border-color:#327d66;color:#b6f4d9}.notice.bad{border-color:#9c4c50;color:#ffd0ce}.score{font-size:26px;font-weight:950;color:var(--gold)}.playerline{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #2b3d55}.playerline:last-child{border-bottom:0}.tabs{display:flex;gap:8px;flex-wrap:wrap}.tab{background:#1a2a40;color:var(--cream);border:1px solid var(--line)}.tab.active{background:var(--gold);color:#172234}.footer{color:#8293aa;font-size:11px;text-align:center;padding:24px 0}.code{font-family:ui-monospace,monospace;word-break:break-all}.spinner{display:inline-block;width:14px;height:14px;border:2px solid #65748b;border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}@media(max-width:520px){.wrap{padding:12px}.panel{padding:13px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:10px;min-height:150px}.top{align-items:flex-start}.stamp{font-size:9px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">🕵️ FOOD DETECTIVE<small>食物犯罪現場｜飲食陷阱大破解</small></div><div class="stamp">CASE FILE<br>CONFIDENTIAL</div></header>
+<main id="app">
+<section id="home">
+<h1>揭開食物的<br><span class="gold">營養犯罪現場</span></h1>
+<p class="muted">看標示、找線索、抓出飲食陷阱。建立房間後，把房間代碼分享給 3–5 位玩家，每人用自己的手機加入。</p>
+<div class="panel">
+<h2>建立偵查房間</h2>
+<div class="field"><label for="hostName">你的偵探代號</label><input id="hostName" maxlength="16" placeholder="例如：小周偵探"></div>
+<button id="createBtn">＋ 建立新案件房間</button>
+<p class="muted" style="font-size:12px">需要部署線上伺服器；單純開啟這個 HTML 檔只能預覽介面，無法跨手機連線。</p>
+</div>
+<div class="panel">
+<h2>加入偵查房間</h2>
+<div class="field"><label for="roomCode">房間代碼</label><input id="roomCode" maxlength="6" placeholder="輸入 6 位代碼" autocapitalize="characters"></div>
+<div class="field"><label for="joinName">你的偵探代號</label><input id="joinName" maxlength="16" placeholder="例如：營養小高手"></div>
+<button id="joinBtn" class="secondary">加入房間</button>
+</div>
+<div class="panel"><h3>遊戲規則速讀</h3><p class="muted">每回合抽 2 張牌，再選擇交換情報、破案指控或結束回合。成功破案可獲得案件卡 +3 分、食品卡 +2 分、正確線索每張 +1 分。四案破解或牌堆用盡時結算。</p></div>
+</section>
+<section id="room" class="hidden">
+<div class="row between"><div><span class="pill goldpill" id="roomPill">房間</span><span class="pill" id="phasePill">等待玩家</span></div><button id="leaveBtn" class="secondary">離開房間</button></div>
+<div class="panel">
+<div class="row between"><div><h2 id="roomTitle">偵查房間</h2><div class="muted" id="roomSub"></div></div><button id="copyCodeBtn" class="secondary">複製代碼</button></div>
+<div class="notice" id="roomNotice">等待房間資料…</div>
+<div class="row" style="margin-top:12px"><button id="startBtn">開始遊戲（房主）</button><button id="refreshBtn" class="secondary">重新整理</button></div>
+</div>
+<div class="grid">
+<div class="panel"><h3>目前案件</h3><div id="currentCase"></div></div>
+<div class="panel"><h3>偵探排行榜</h3><div id="players"></div></div>
+</div>
+<div id="gameArea" class="hidden">
+<div class="panel">
+<div class="row between"><div><h2>你的偵查回合</h2><div class="muted" id="turnText"></div></div><div class="score"><span id="deckCount">0</span><small style="font-size:12px;color:var(--muted)"> 張牌剩餘</small></div></div>
+<div class="notice" id="actionNotice">請先抽牌。</div>
+<div class="row" style="margin-top:12px"><button id="drawBtn">抽 2 張牌</button><button id="endTurnBtn" class="secondary">結束回合</button></div>
+</div>
+<div class="panel">
+<div class="section-head"><h2>你的手牌</h2><span class="pill" id="handCount">0 張</span></div>
+<div class="tabs"><button class="tab active" data-filter="all">全部</button><button class="tab" data-filter="food">食品資訊</button><button class="tab" data-filter="clue">營養線索</button></div>
+<p class="muted">點選卡牌以選取指控素材。破案需選 1 張食品卡與 1–2 張線索卡。</p>
+<div id="handCards" class="cards"></div>
+<div class="row" style="margin-top:14px"><button id="accuseBtn">🔎 提出破案指控</button><button id="exchangeBtn" class="secondary">交換情報（棄 1 補 1）</button></div>
+<div class="field"><label for="explainText">你的破案說明</label><input id="explainText" placeholder="例如：這款泡麵鈉含量高，可能增加每日鈉攝取負擔。"></div>
+</div>
+<div class="panel"><h2>公開案件紀錄</h2><div id="log" class="muted">尚無紀錄。</div></div>
+</div>
+<div id="resultArea" class="panel hidden"><h2>案件總結</h2><div id="finalScores"></div><button id="backHomeBtn" class="secondary">返回首頁</button></div>
+</section>
+</main>
+<div class="footer">FOOD DETECTIVE · 教育用途。營養標示為遊戲情境資料，非特定商品建議。</div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+let socket=null, roomCode=null, playerId=null, isHost=false, state=null, filter='all', selected=new Set(), hasDrawn=false;
+const socketReady=()=>typeof io==='function';
+function connect(){if(!socketReady()){alert('目前沒有連線伺服器。請依 README 部署 Node.js + Socket.IO 伺服器，再透過網址開啟。');return false}if(!socket){socket=io();socket.on('roomState',s=>{state=s;render()});socket.on('errorMessage',m=>alert(m));socket.on('gameMessage',m=>{alert(m);});socket.on('connect_error',()=>alert('連線失敗，請確認伺服器網址與網路。'));}return true}
+function enterRoom(code,id,host){roomCode=code;playerId=id;isHost=host;$('home').classList.add('hidden');$('room').classList.remove('hidden');$('roomPill').textContent='房間 '+code;$('startBtn').classList.toggle('hidden',!host);render()}
+$('createBtn').onclick=()=>{if(!connect())return;const name=$('hostName').value.trim()||'房主';socket.emit('createRoom',{name},r=>{if(!r?.ok){alert(r?.error||'建立失敗');return}enterRoom(r.code,r.playerId,true)})};
+$('joinBtn').onclick=()=>{if(!connect())return;const code=$('roomCode').value.trim().toUpperCase(),name=$('joinName').value.trim()||'偵探';socket.emit('joinRoom',{code,name},r=>{if(!r?.ok){alert(r?.error||'加入失敗');return}enterRoom(code,r.playerId,false)})};
+$('leaveBtn').onclick=()=>{if(socket&&roomCode)socket.emit('leaveRoom',{code:roomCode,playerId});roomCode=null;state=null;$('room').classList.add('hidden');$('home').classList.remove('hidden')};
+$('copyCodeBtn').onclick=async()=>{try{await navigator.clipboard.writeText(roomCode);alert('已複製房間代碼：'+roomCode)}catch(e){prompt('請複製房間代碼',roomCode)}};
+$('startBtn').onclick=()=>socket.emit('startGame',{code:roomCode,playerId});
+$('refreshBtn').onclick=()=>socket.emit('getRoomState',{code:roomCode,playerId});
+$('drawBtn').onclick=()=>{if(hasDrawn)return;socket.emit('drawCards',{code:roomCode,playerId},r=>{if(r?.ok){hasDrawn=true;$('drawBtn').disabled=true;$('actionNotice').textContent='已抽牌。請選擇交換情報、提出指控或結束回合。'}else alert(r?.error||'無法抽牌')})};
+$('endTurnBtn').onclick=()=>socket.emit('endTurn',{code:roomCode,playerId},r=>{if(r?.ok){hasDrawn=false;selected.clear()}else alert(r?.error||'無法結束回合')});
+$('exchangeBtn').onclick=()=>{const ids=[...selected];if(ids.length!==1){alert('請先選擇 1 張手牌作為棄牌。');return}socket.emit('exchangeCard',{code:roomCode,playerId,discardId:ids[0]},r=>{if(r?.ok){selected.clear();render()}else alert(r?.error||'交換失敗')})};
+$('accuseBtn').onclick=()=>{const ids=[...selected],food=ids.filter(id=>findCard(id)?.type==='food'),clues=ids.filter(id=>findCard(id)?.type==='clue');if(food.length!==1||clues.length<1||clues.length>2){alert('請選擇 1 張食品卡與 1–2 張線索卡。');return}socket.emit('accuse',{code:roomCode,playerId,foodId:food[0],clueIds:clues,explanation:$('explainText').value.trim()},r=>{if(!r?.ok)alert(r?.error||'指控未送出');else{selected.clear();$('explainText').value='';hasDrawn=false;render()}})};
+document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));renderHand()});
+$('backHomeBtn').onclick=()=>{$('leaveBtn').click();$('resultArea').classList.add('hidden')};
+function findCard(id){return state?.myHand?.find(c=>c.id===id)}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function cardHTML(c,selectable=true){const chosen=selected.has(c.id);return `<button class="card ${c.type} ${chosen?'selected':''}" data-card="${esc(c.id)}" ${selectable?'':'disabled'}><span class="type">${c.type==='food'?'食品資訊卡':'營養線索卡'}</span><strong>${esc(c.title)}</strong><small>${esc(c.summary)}</small>${chosen?'<span class="mark">已選取</span>':''}</button>`}
+function renderHand(){if(!state)return;const hand=state.myHand||[];$('handCount').textContent=hand.length+' 張';$('handCards').innerHTML=hand.filter(c=>filter==='all'||c.type===filter).map(c=>cardHTML(c)).join('')||'<div class="notice">此分類目前沒有卡牌。</div>';document.querySelectorAll('[data-card]').forEach(b=>b.onclick=()=>{const id=b.dataset.card;if(selected.has(id))selected.delete(id);else selected.add(id);renderHand()})}
+function render(){if(!state)return;$('roomTitle').textContent=state.status==='lobby'?'等待偵探集結':'案件偵查中';$('roomSub').textContent=`${state.players.length}/5 位玩家 · 最少 3 人開始`;const me=state.players.find(p=>p.id===playerId);$('roomNotice').textContent=state.status==='lobby'?'把房間代碼分享給其他玩家。3–5 人加入後，由房主開始遊戲。':state.status==='finished'?'所有案件已結束，查看最終排名。':`目前輪到：${state.players.find(p=>p.id===state.currentPlayerId)?.name||'—'}。${me?.id===state.currentPlayerId?'現在是你的回合！':'等待其他玩家操作。'}`;
+$('startBtn').disabled=state.players.length<3||state.status!=='lobby';$('players').innerHTML=state.players.slice().sort((a,b)=>b.score-a.score).map((p,i)=>`<div class="playerline"><div>${i===0?'🕵️':'🔎'} ${esc(p.name)} ${p.id===playerId?'<span class="pill">你</span>':''}</div><strong>${p.score} 分</strong></div>`).join('');
+const c=state.currentCase;$('currentCase').innerHTML=c?`<div class="case-num">${esc(c.number)}</div><div class="case-title">${esc(c.title)}</div><p class="muted">${esc(c.description)}</p><div class="row">${c.tags.map(t=>`<span class="pill goldpill">${esc(t)}</span>`).join('')}</div>`:'<div class="notice">目前沒有待破解案件。</div>';
+$('gameArea').classList.toggle('hidden',state.status!=='playing');$('resultArea').classList.toggle('hidden',state.status!=='finished');$('phasePill').textContent=state.status==='lobby'?'等待玩家':state.status==='finished'?'已結案':'案件進行中';$('deckCount').textContent=state.deckCount;
+const isTurn=state.currentPlayerId===playerId;$('turnText').textContent=isTurn?'輪到你：抽牌後進行行動':'等待其他玩家回合';$('drawBtn').disabled=!isTurn||hasDrawn;$('endTurnBtn').disabled=!isTurn;$('accuseBtn').disabled=!isTurn;$('exchangeBtn').disabled=!isTurn;
+renderHand();$('log').innerHTML=(state.logs||[]).slice(-8).reverse().map(x=>`<div class="playerline"><div>${esc(x.text)}</div><small class="muted">${esc(x.time)}</small></div>`).join('')||'尚無紀錄。';
+if(state.status==='finished')$('finalScores').innerHTML=state.players.slice().sort((a,b)=>b.score-a.score).map((p,i)=>`<div class="playerline"><div>${i===0?'🏆':'🔎'} ${esc(p.name)}</div><div class="score">${p.score}</div></div>`).join('');
+}
+</script>
+</body></html>
